@@ -4,98 +4,375 @@
     box-sizing: border-box;
 }
 
+:root{
+    --azul: rgb(133, 82, 79);
+    --azul-escuro: rgb(232, 168, 186);
+    --azul-escuro2:rgb(232, 131, 165);
+    --cinza-fundo: #f2f4f8;
+    --cinza-borda: #dde3ec;
+    --verde: #1f9d55;
+    --vermelho: #d64545;
+    --texto: #1c2733;
+}
+
 body{
-    background-color: SkyBlue;
+    background-color: var(--cinza-fundo);
     font-family: 'Segoe UI', sans-serif;
+    color: var(--texto);
+}
+
+/* ---------------- NAVBAR ---------------- */
+header{
+    background-color: var(--azul-escuro);
+    border-bottom: 4px solid var(--azul);
 }
 
 nav{
-    padding: 20px 10px;
-    text-align: center;
-    line-height: 2.2;
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 14px;
+    padding-right: 14px;
+    border-right: 1px solid rgba(255,255,255,0.25);
 }
 
 nav a{
     text-decoration: none;
-    font-size: 1.3rem;
-    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.95rem;
+    color: #d7e2f3;
+    padding: 7px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover, nav a.ativo{
+    background-color: var(--azul);
     color: white;
-    padding: 6px 12px;
-    display: inline-block;
-}
-
-a:hover{
-    background-color: rgb(108, 194, 68);
-    border-radius: 16px;
-    transition: background-color 0.4s ease, border-radius 0.4s ease;
-}
-
-main, footer{
-    text-align: center;
-    color: white;
-    padding: 40px 20px;
-}
-
-h1{
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-h2{
-    font-size: 2rem;
-    font-weight: 500;
 }
 
 .titulo_menu{
-    color: rgb(2, 132, 253); 
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 1.4rem; 
+    color: #6fa8ff;
+    font-size: 0.8rem;
     font-weight: bold;
-    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0 6px 0 12px;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 80%;
+nav hr{
+    display: none;
+}
+
+/* ---------------- LAYOUT GERAL ---------------- */
+main{
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 30px 20px 60px;
 }
 
-/* CONTAINER GERENCIAL DOS GRÁFICOS */
-.container_grafico {
-    width: 90%;
-    max-width: 1100px;
-    height: 600px;
-    margin: 30px auto;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 25px;
-    border-radius: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+h1{
+    font-size: 2.1rem;
+    color: var(--azul-escuro);
+    margin-bottom: 6px;
 }
 
-/* BOTÃO DE EMISSÃO DE RELATÓRIO PADRONIZADO */
-.btn_gerar {
-    background-color: black;
+h2{
+    font-size: 1.4rem;
+    color: var(--azul-escuro2);
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* ---------------- TELA INICIAL ---------------- */
+.hero{
+    background: linear-gradient(135deg, var(--azul-escuro), var(--azul-escuro2));
     color: white;
-    font-size: 1.25rem;
-    font-weight: bold;
-    padding: 12px 24px;
-    border: 2px solid white;
+    text-align: center;
+    padding: 60px 20px;
     border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+.hero h1{
+    color: white;
+    font-size: 2.4rem;
+}
+
+.hero p{
+    font-size: 1.1rem;
+    color: #cfe0f7;
+    margin-top: 10px;
+}
+
+.cards_home{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.card_home{
+    background: white;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 14px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--texto);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card_home:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.09);
+}
+
+.card_home .icone{
+    font-size: 1.8rem;
+}
+
+.card_home h3{
+    color: var(--azul-escuro);
+    margin: 8px 0 4px;
+}
+
+.card_home p{
+    font-size: 0.9rem;
+    color: #5a6b7d;
+}
+
+/* ---------------- CARD / PAINEL PADRÃO ---------------- */
+.painel{
+    background: white;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* ---------------- FORMULÁRIOS ---------------- */
+form label{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--azul-escuro2);
+    margin: 12px 0 6px;
+}
+
+form input, form select{
+    width: 100%;
+    max-width: 340px;
+    padding: 9px 12px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fbfcfe;
+}
+
+form input:focus, form select:focus{
+    outline: none;
+    border-color: var(--azul);
+}
+
+button, .btn{
+    background-color: var(--azul);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s;
+    margin-top: 16px;
+    transition: background-color 0.15s ease;
 }
 
-.btn_gerar:hover {
-    background-color: #1e1e1e;
-    transform: scale(1.03);
+button:hover, .btn:hover{
+    background-color: #0468c9;
 }
 
-/* TEXTO DE RETORNO DO FRONT-END */
-.resposta {
-    font-size: 1.5rem; /* Fonte ampliada */
-    font-weight: bold; /* Negrito */
-    color: white; /* Sempre texto branco puro */
-    margin: 15px auto;
+button.secundario{
+    background-color: #64748b;
+}
+
+button.secundario:hover{
+    background-color: #4d5a6c;
+}
+
+button.perigo{
+    background-color: var(--vermelho);
+}
+
+button.perigo:hover{
+    background-color: #b53535;
+}
+
+/* ---------------- MENSAGENS DE RETORNO ---------------- */
+.resposta, .resposta_nome{
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 14px 0;
+    color: var(--texto);
+}
+
+.msg_ok{ color: var(--verde); }
+.msg_erro{ color: var(--vermelho); }
+.msg_aviso{ color: #b8860b; }
+
+/* ---------------- TABELAS ---------------- */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td{
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--cinza-borda);
+    font-size: 0.92rem;
+}
+
+th{
+    background-color: var(--azul-escuro);
+    color: white;
+    font-weight: 600;
+}
+
+tbody tr:hover{
+    background-color: #eef4ff;
+}
+
+td button{
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.badge{
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: white;
+}
+
+.badge_ok{ background-color: var(--verde); }
+.badge_alerta{ background-color: var(--vermelho); }
+
+/* ---------------- DASHBOARD DE PRODUTOS (CARDS) ---------------- */
+.grid_produtos{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card_produto{
+    background: white;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.card_produto img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background: #eef1f5;
+}
+
+.card_produto .info{
+    padding: 14px;
+}
+
+.card_produto h3{
+    font-size: 1rem;
+    color: var(--azul-escuro);
+    margin-bottom: 4px;
+}
+
+.card_produto .categoria{
+    font-size: 0.78rem;
+    color: #7a8797;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.card_produto .preco{
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--azul-escuro2);
+}
+
+.card_produto .estoque{
+    font-size: 0.85rem;
+    margin-top: 6px;
+}
+
+.filtros{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filtros input, .filtros select{
+    max-width: 220px;
+    margin: 0;
+}
+
+/* ---------------- GRÁFICOS ---------------- */
+.container_grafico{
+    width: 100%;
+    max-width: 1100px;
+    height: 480px;
+    margin: 20px auto 0;
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid var(--cinza-borda);
+}
+
+.btn_gerar{
+    background-color: var(--azul-escuro);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn_gerar:hover{
+    background-color: var(--azul-escuro2);
+}
+
+footer{
+    text-align: center;
+    color: #8593a3;
+    padding: 30px 20px;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 700px){
+    .hero h1{ font-size: 1.8rem; }
+    nav{ justify-content: center; text-align: center; }
 }

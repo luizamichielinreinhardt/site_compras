@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels" defer></script>
+    
+    <script src="../js/mov_historico_saida.js" defer></script>
+    <title>Relatório Gráfico - Produtos Críticos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>&emsp;&emsp;
+            <span class="titulo_menu">Relatórios</span>&emsp;
+            <a href="./mov_categoria_listar.html">Volume de Compras</a>&emsp;
+            <a href="./mov_historico_saida.html">Produtos Críticos</a>
+            <hr>
+        </nav>
+    </header>
+    <main>
+        <h1>Relatório Gráfico: Alerta de Produtos Críticos</h1>
+        
+        <button id="gerar_grafico" class="btn_gerar">Gerar Gráfico</button>
+        <br>
+        <div id="resposta" class="resposta">Clique no botão para renderizar...</div>
+
+        <div class="container_grafico">
+            <canvas id="graf"></canvas>
+        </div>
+    </main>
+</body>
+</html>

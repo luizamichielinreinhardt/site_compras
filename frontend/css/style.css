@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: SkyBlue;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+nav{
+    padding: 20px 10px;
+    text-align: center;
+    line-height: 2.2;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    padding: 6px 12px;
+    display: inline-block;
+}
+
+a:hover{
+    background-color: rgb(108, 194, 68);
+    border-radius: 16px;
+    transition: background-color 0.4s ease, border-radius 0.4s ease;
+}
+
+main, footer{
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.titulo_menu{
+    color: rgb(2, 132, 253); 
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.4rem; 
+    font-weight: bold;
+    display: inline-block;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* CONTAINER GERENCIAL DOS GRÁFICOS */
+.container_grafico {
+    width: 90%;
+    max-width: 1100px;
+    height: 600px;
+    margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* BOTÃO DE EMISSÃO DE RELATÓRIO PADRONIZADO */
+.btn_gerar {
+    background-color: black;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: 2px solid white;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.btn_gerar:hover {
+    background-color: #1e1e1e;
+    transform: scale(1.03);
+}
+
+/* TEXTO DE RETORNO DO FRONT-END */
+.resposta {
+    font-size: 1.5rem; /* Fonte ampliada */
+    font-weight: bold; /* Negrito */
+    color: white; /* Sempre texto branco puro */
+    margin: 15px auto;
+}

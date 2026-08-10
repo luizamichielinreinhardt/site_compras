@@ -19,15 +19,25 @@ app.use(cors())
 //--------------- Rotas --------------
 
 // Rotas de Usuário
+app.get('/usuarios', usuarioController.listar)
+app.get('/usuarios/:id', usuarioController.consultar)
+app.post('/usuarios', usuarioController.cadastrar)
 app.post('/usuarios/carga-lote', usuarioController.cargaLote) // Carga em lote vinda do Front
+app.delete('/usuarios/:id', usuarioController.apagar)
 
 // Rotas de Produto
+app.get('/produtos', produtoController.listar)
+app.get('/produtos/:id', produtoController.consultar)
+app.post('/produtos', produtoController.cadastrar)
 app.post('/produtos/carga-lote', produtoController.cargaLote) // Carga em lote vinda do Front
+app.delete('/produtos/:id', produtoController.apagar)
 
 // Rotas de Compra (Movimentação de Estoque)
+app.get('/compra', compraController.listar)
 app.post('/compra', compraController.cadastrar)
+app.delete('/compra/:id', compraController.apagar)
 
-// Rotas de Relatórios Analíticos (Views SQL Nativas)
+// Rotas de Relatórios Analíticos (Views SQL Nativas) - também usadas pelos gráficos
 app.get('/relatorio/produtos-criticos', relatVwController.listarHistoricoSaidas)
 app.get('/relatorio/volume-compras', relatVwController.listarPorCategorias)
 

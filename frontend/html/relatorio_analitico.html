@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/relatorio_analitico.js" defer></script>
+    <title>Relatório Analítico</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="../index.html">Compras Interno</a>
+            <a href="../index.html">Home</a>
+
+            <span class="titulo_menu">Usuários</span>
+            <a href="./usuario_cadastrar.html">Cadastrar</a>
+            <a href="./usuario_listar.html">Listar</a>
+
+            <span class="titulo_menu">Produtos</span>
+            <a href="./produto_cadastrar.html">Cadastrar</a>
+            <a href="./produto_listar.html">Listar</a>
+
+            <span class="titulo_menu">Movimentação</span>
+            <a href="./movimento_cadastrar.html">Registrar</a>
+            <a href="./movimento_listar.html">Histórico</a>
+
+            <span class="titulo_menu">Relatórios</span>
+            <a href="./relatorio_analitico.html" class="ativo">Analítico</a>
+            <a href="./mov_categoria_listar.html">Gráfico Volume</a>
+            <a href="./mov_historico_saida.html">Gráfico Críticos</a>
+
+            <span class="titulo_menu">Painel</span>
+            <a href="./dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Relatório Analítico</h1>
+        <p>Dados extraídos diretamente das Views do banco de dados.</p>
+
+        <div class="painel">
+            <h2>Produtos críticos (view: vw_produtos_criticos)</h2>
+            <p>Produtos com estoque atual abaixo de 10 unidades.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cód. produto</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Quantidade atual</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela_criticos"></tbody>
+            </table>
+        </div>
+
+        <div class="painel">
+            <h2>Volume financeiro comprado por produto (view: vw_volume_compras)</h2>
+            <p>Quantidade total e valor financeiro movimentado nas saídas de estoque.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade total movimentada</th>
+                        <th>Valor financeiro movimentado</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela_volume"></tbody>
+            </table>
+        </div>
+
+        <div id="resposta" class="resposta"></div>
+    </main>
+</body>
+</html>

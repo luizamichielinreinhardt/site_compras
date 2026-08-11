@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/dashboard.js" defer></script>
+    <title>Dashboard de Produtos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="../index.html">Compras Interno</a>
+            <a href="../index.html">Home</a>
+
+            <span class="titulo_menu">Usuários</span>
+            <a href="./usuario_cadastrar.html">Cadastrar</a>
+            <a href="./usuario_listar.html">Listar</a>
+
+            <span class="titulo_menu">Produtos</span>
+            <a href="./produto_cadastrar.html">Cadastrar</a>
+            <a href="./produto_listar.html">Listar</a>
+
+            <span class="titulo_menu">Movimentação</span>
+            <a href="./movimento_cadastrar.html">Registrar</a>
+            <a href="./movimento_listar.html">Histórico</a>
+
+            <span class="titulo_menu">Relatórios</span>
+            <a href="./relatorio_analitico.html">Analítico</a>
+            <a href="./mov_categoria_listar.html">Gráfico Volume</a>
+            <a href="./mov_historico_saida.html">Gráfico Críticos</a>
+
+            <span class="titulo_menu">Painel</span>
+            <a href="./dashboard.html" class="ativo">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Dashboard de produtos</h1>
+
+        <div class="filtros">
+            <input type="text" id="busca" placeholder="Buscar produto...">
+            <select id="filtro_categoria">
+                <option value="">Todas as categorias</option>
+            </select>
+        </div>
+
+        <div id="grid_produtos" class="grid_produtos"></div>
+        <div id="resposta" class="resposta"></div>
+    </main>
+</body>
+</html>

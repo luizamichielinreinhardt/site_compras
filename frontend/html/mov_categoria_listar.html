@@ -4,29 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels" defer></script>
-    
+
     <script src="../js/mov_categoria_listar.js" defer></script>
-    <title>Relatório Gráfico - Volume por Categoria</title>
+    <title>Relatório Gráfico - Volume Financeiro</title>
 </head>
 <body>
     <header>
         <nav>
-            <a href="../index.html">Home</a>&emsp;&emsp;
-            <span class="titulo_menu">Relatórios</span>&emsp;
-            <a href="./mov_categoria_listar.html">Volume de Compras</a>&emsp;
-            <a href="./mov_historico_saida.html">Produtos Críticos</a>
-            <br><hr><br>
+            <a class="logo" href="../index.html">Compras Interno</a>
+            <a href="../index.html">Home</a>
+
+            <span class="titulo_menu">Usuários</span>
+            <a href="./usuario_cadastrar.html">Cadastrar</a>
+            <a href="./usuario_listar.html">Listar</a>
+
+            <span class="titulo_menu">Produtos</span>
+            <a href="./produto_cadastrar.html">Cadastrar</a>
+            <a href="./produto_listar.html">Listar</a>
+
+            <span class="titulo_menu">Movimentação</span>
+            <a href="./movimento_cadastrar.html">Registrar</a>
+            <a href="./movimento_listar.html">Histórico</a>
+
+            <span class="titulo_menu">Relatórios</span>
+            <a href="./relatorio_analitico.html">Analítico</a>
+            <a href="./mov_categoria_listar.html" class="ativo">Gráfico Volume</a>
+            <a href="./mov_historico_saida.html">Gráfico Críticos</a>
+
+            <span class="titulo_menu">Painel</span>
+            <a href="./dashboard.html">Dashboard</a>
         </nav>
     </header>
     <main>
-        <h1>Relatório Gráfico: Volume de Compras por Categoria</h1>
-        <br>
-        
+        <h1>Relatório Gráfico: Volume Financeiro de Compras</h1>
+        <p>Top 5 produtos com maior valor financeiro movimentado nas saídas de estoque.</p>
+
         <button id="gerar_grafico" class="btn_gerar">Gerar Gráfico</button>
-        <br>
         <div id="resposta" class="resposta">Clique no botão para renderizar...</div>
 
         <div class="container_grafico">

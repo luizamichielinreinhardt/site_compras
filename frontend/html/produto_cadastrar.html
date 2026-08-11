@@ -4,54 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style_cad.css">
     <script src="../js/produto_cadastrar.js" defer></script>
     <title>Cadastro de Produto</title>
 </head>
 <body>
     <header>
         <nav>
-            <a href="../index.html">Home</a>&emsp;&emsp;
-            <span class="titulo_menu">Produtos</span>&emsp;
-            <a href="./produto_cadastrar.html">Cadastrar</a>&emsp;
-            <a href="./produto_listar.html">Listar</a>&emsp;
-            <a href="./produto_consultar.html">Consultar</a>&emsp;
-            <a href="./produto_atualizar.html">Atualizar</a>&emsp;
-            <a href="./produto_apagar.html">Apagar</a>
-            <br><br><hr><br>
+            <a class="logo" href="../index.html">Compras Interno</a>
+            <a href="../index.html">Home</a>
+
+            <span class="titulo_menu">Usuários</span>
+            <a href="./usuario_cadastrar.html">Cadastrar</a>
+            <a href="./usuario_listar.html">Listar</a>
+
+            <span class="titulo_menu">Produtos</span>
+            <a href="./produto_cadastrar.html" class="ativo">Cadastrar</a>
+            <a href="./produto_listar.html">Listar</a>
+
+            <span class="titulo_menu">Movimentação</span>
+            <a href="./movimento_cadastrar.html">Registrar</a>
+            <a href="./movimento_listar.html">Histórico</a>
+
+            <span class="titulo_menu">Relatórios</span>
+            <a href="./relatorio_analitico.html">Analítico</a>
+            <a href="./mov_categoria_listar.html">Gráfico Volume</a>
+            <a href="./mov_historico_saida.html">Gráfico Críticos</a>
+
+            <span class="titulo_menu">Painel</span>
+            <a href="./dashboard.html">Dashboard</a>
         </nav>
     </header>
     <main>
-        <h2>Formulário de Cadastro Manual de Produto</h2>
-        <br>
-        <form id="form_manual">
-            <label for="nome">Nome do Produto</label><br>
-            <input type="text" id="nome" required><br><br>
+        <h1>Produtos</h1>
 
-            <label for="categoria">Categoria</label><br>
-            <input type="text" id="categoria" required><br><br>
+        <div class="painel">
+            <h2>Cadastro manual</h2>
+            <form id="form_manual">
+                <label for="nome">Nome do produto</label>
+                <input type="text" id="nome" required>
 
-            <label for="quantidade">Quantidade em Estoque</label><br>
-            <input type="number" id="quantidade" required><br><br>
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao">
 
-            <label for="precoUnit">Preço Unitário</label><br>
-            <input type="number" step="0.01" id="precoUnit" required><br><br>
+                <label for="categoria">Categoria</label>
+                <input type="text" id="categoria" required>
 
-            <button id="btn_cadastrar_manual">Cadastrar Produto</button>
-        </form>
-         
-        <br><br><hr style="border: 1px dashed white; width: 60%; margin: 0 auto;"><br>
+                <label for="preco">Preço unitário</label>
+                <input type="number" step="0.01" id="preco" required>
 
-        <h2>Cadastro Automatizado de Produtos em Lote</h2>
-        <br>
-        <div id="container_lote">
-            <label>Realizar a carga inicial massiva de mercadorias importando dados estruturados diretamente da API externa DummyJSON:</label>
-            <br><br>
-            <button id="btn_carga_lote" style="background-color: #0284fd; width: 320px;">Executar Carga em Lote (BulkCreate)</button>
+                <label for="desconto">Desconto (%)</label>
+                <input type="number" step="0.01" id="desconto" value="0">
+
+                <label for="qtdeEstoque">Quantidade em estoque</label>
+                <input type="number" id="qtdeEstoque" required>
+
+                <label for="marca">Marca</label>
+                <input type="text" id="marca">
+
+                <label for="imagem">URL da imagem</label>
+                <input type="text" id="imagem">
+
+                <br>
+                <button id="btn_cadastrar_manual">Cadastrar Produto</button>
+            </form>
+            <div id="resposta_manual" class="resposta"></div>
         </div>
 
-        <br><br>
-        <div id="resposta" class="resposta"></div>
+        <div class="painel">
+            <h2>Carga automática em lote (API DummyJSON)</h2>
+            <p>Importa o catálogo de produtos da API pública e cadastra todos de uma vez com bulkCreate.</p>
+            <button id="btn_carga_lote">Executar Carga em Lote</button>
+            <div id="resposta_lote" class="resposta"></div>
+        </div>
     </main>
 </body>
 </html>

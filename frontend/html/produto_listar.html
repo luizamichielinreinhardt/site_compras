@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/produto_listar.js" defer></script>
+    <title>Listagem de Produtos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="../index.html">Compras Interno</a>
+            <a href="../index.html">Home</a>
+
+            <span class="titulo_menu">Usuários</span>
+            <a href="./usuario_cadastrar.html">Cadastrar</a>
+            <a href="./usuario_listar.html">Listar</a>
+
+            <span class="titulo_menu">Produtos</span>
+            <a href="./produto_cadastrar.html">Cadastrar</a>
+            <a href="./produto_listar.html" class="ativo">Listar</a>
+
+            <span class="titulo_menu">Movimentação</span>
+            <a href="./movimento_cadastrar.html">Registrar</a>
+            <a href="./movimento_listar.html">Histórico</a>
+
+            <span class="titulo_menu">Relatórios</span>
+            <a href="./relatorio_analitico.html">Analítico</a>
+            <a href="./mov_categoria_listar.html">Gráfico Volume</a>
+            <a href="./mov_historico_saida.html">Gráfico Críticos</a>
+
+            <span class="titulo_menu">Painel</span>
+            <a href="./dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Produtos cadastrados</h1>
+
+        <div class="painel">
+            <div class="filtros">
+                <input type="text" id="busca" placeholder="Buscar por nome ou categoria...">
+                <button id="btn_atualizar" class="secundario">Atualizar lista</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cód.</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela_produtos"></tbody>
+            </table>
+            <div id="resposta" class="resposta"></div>
+        </div>
+    </main>
+</body>
+</html>
